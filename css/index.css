@@ -1,0 +1,424 @@
+
+      .contact-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        font-size: 18px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        white-space: nowrap;
+      }
+
+      .contact-item i {
+        color: #007bff;
+      }
+
+      .contact-item a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .contact-item a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive - chuyển sang dạng dọc khi màn hình nhỏ */
+      @media (max-width: 600px) {
+        .contact-container {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      .media-group {
+        margin-bottom: 50px;
+      }
+
+      .media-group h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #444;
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 5px;
+      }
+
+      .media-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .media-box {
+        max-width: 400px;
+        width: 100%;
+        background: #f9f9f9;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        padding: 10px;
+        text-align: center;
+      }
+
+      .media-box img,
+      .media-box video {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .caption {
+        font-size: 14px;
+        color: #555;
+        margin-top: 8px;
+        font-style: italic;
+      }
+
+      @keyframes pulseGlow {
+        0% {
+          box-shadow: 0 0 0px rgba(0, 255, 200, 0.3);
+        }
+        50% {
+          box-shadow: 0 0 18px rgba(0, 255, 200, 0.6);
+        }
+        100% {
+          box-shadow: 0 0 0px rgba(0, 255, 200, 0.3);
+        }
+      }
+
+      #join-button.glow {
+        animation: pulseGlow 1.5s infinite;
+      }
+
+      .join-section {
+        text-align: center;
+        margin: 40px 0;
+      }
+
+      #join-button {
+        background-color: #000;
+        color: #fff;
+        padding: 14px 32px;
+        font-size: 20px;
+        font-family: "Segoe UI", sans-serif;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+      }
+
+      #join-button:hover {
+        background-color: #333;
+        transform: scale(1.05);
+      }
+
+      #join-button.clicked::after {
+        content: "✔️ Đã Tham Gia!";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #1e1e1e;
+        color: #00ffcc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: popIn 0.4s ease forwards;
+        font-weight: bold;
+      }
+
+      @keyframes popIn {
+        0% {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      #count-text {
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #fff;
+      }
+
+      /* Reset cơ bản */
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #111;
+        color: #eee;
+        font-family: "Merriweather", serif;
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px 80px;
+        user-select: none;
+      }
+
+      h1 {
+        font-size: 3.2rem;
+        margin-bottom: 12px;
+        text-align: center;
+        letter-spacing: 0.06em;
+        font-weight: 700;
+        text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.15);
+      }
+
+      .graduate-photo {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 20px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+        border: 4px solid #fff;
+      }
+
+      .graduate-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      h2 {
+        font-size: 1.9rem;
+        font-weight: 500;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #ccc;
+        letter-spacing: 0.03em;
+      }
+
+      p {
+        max-width: 700px;
+        font-size: 1.15rem;
+        color: #bbb;
+        margin-bottom: 35px;
+        text-align: center;
+      }
+
+      /* Nút tham gia */
+      #rsvp-btn {
+        background: transparent;
+        border: 2.5px solid #eee;
+        color: #eee;
+        font-size: 1.25rem;
+        padding: 14px 36px;
+        border-radius: 40px;
+        cursor: pointer;
+        transition: all 0.35s ease;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        user-select: none;
+        font-family: "Merriweather", serif;
+        font-weight: 600;
+      }
+      #rsvp-btn:hover:not(:disabled) {
+        background: #eee;
+        color: #111;
+        box-shadow: 0 0 24px #eee;
+      }
+      #rsvp-btn:disabled {
+        border-color: #555;
+        color: #555;
+        cursor: default;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      /* Đếm số người */
+      #count {
+        margin-top: 14px;
+        font-size: 1.3rem;
+        color: #ccc;
+        text-align: center;
+        user-select: none;
+      }
+
+      /* Gallery tổng */
+      .gallery {
+        margin-top: 60px;
+        max-width: 900px;
+        width: 100%;
+      }
+
+      .gallery h2 {
+        font-size: 2.4rem;
+        color: #eee;
+        margin-bottom: 25px;
+        text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.17);
+        text-align: center;
+        font-weight: 700;
+      }
+
+      .media-group {
+        margin-bottom: 40px;
+        padding: 15px 25px;
+        background: #222;
+        border-radius: 16px;
+        box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.07);
+      }
+
+      .media-group h3 {
+        font-size: 1.9rem;
+        margin-bottom: 18px;
+        color: #ddd;
+        text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.12);
+        border-bottom: 1px solid #444;
+        padding-bottom: 6px;
+        font-weight: 600;
+      }
+
+      .media-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        justify-content: center;
+        max-width: 100%; /* giới hạn max-width */
+        overflow: hidden; /* tránh nội dung tràn */
+      }
+
+      .media-items img,
+      .media-items video {
+        width: 280px;
+        height: 180px;
+        border-radius: 14px;
+        object-fit: cover;
+        box-shadow: 0 2px 10px rgba(255, 255, 255, 0.12);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+        background: #111;
+      }
+      .media-items img:hover,
+      .media-items video:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+      }
+
+      /* Responsive */
+      @media (max-width: 650px) {
+        .media-items {
+          flex-direction: column;
+          align-items: center;
+        }
+        .media-items img,
+        .media-items video {
+          width: 90vw;
+          height: auto;
+        }
+      }
+      .media-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        justify-content: center;
+        max-width: 100%; /* giới hạn max-width */
+        overflow: hidden; /* tránh nội dung tràn */
+      }
+
+      .media-box {
+        flex: 1 1 280px; /* giúp box co dãn linh hoạt, nhưng không nhỏ hơn 280px */
+        max-width: 280px;
+        background: #f9f9f9;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        padding: 10px;
+        text-align: center;
+        box-sizing: border-box;
+      }
+
+      .media-box img,
+      .media-box video {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        display: block;
+        object-fit: contain; /* giữ tỉ lệ ảnh/video, không bị bóp méo */
+        max-height: 180px; /* giới hạn chiều cao */
+      }
+
+      /* Responsive */
+      @media (max-width: 650px) {
+        .media-items {
+          flex-direction: column;
+          align-items: center;
+        }
+        .media-box {
+          max-width: 90vw;
+          width: 100%;
+        }
+        .media-box img,
+        .media-box video {
+          max-height: none; /* bỏ giới hạn chiều cao trên mobile */
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .note {
+        background-color: #fff3cd;
+        border-left: 6px solid #ffc107;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 8px;
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+      }
+  
+      .note h3 {
+        margin-top: 0;
+        color: #856404;
+      }
+  
+      .note p {
+        font-size: 16px;
+        color: #333;
+      }
+  
+      .note strong {
+        color: #d63333;
+        font-weight: bold;
+      }
+  
+      .note img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-top: 10px;
+      }
+
+      .music-player {
+        background-color: #e3f2fd;
+        border-left: 6px solid #2196f3;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 600px;
+      }
+  
+      .music-player h3 {
+        margin-top: 0;
+        color: #0d47a1;
+      }
+  
+      audio {
+        width: 100%;
+        outline: none;
+      }
+  
